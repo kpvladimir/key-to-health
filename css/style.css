@@ -1,0 +1,78 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    background: url('/images/bg.jpg') center center no-repeat fixed;
+    background-size: cover;
+}
+
+.start_screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 245px;
+    text-align: center; 
+    
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.start_screen img{
+    max-width: 200px;
+}
+
+.start_screen .btn{
+    width: 100%;
+}
+
+.start_screen .header{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 30px 0 40px;
+}
+
+.system_list{
+    height: 100vh; 
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.system_list .card-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.list-group-item{
+    /*background: linear-gradient(90deg, rgba(6,186,12,1) 0%, rgba(245,238,11,1) 25%, rgba(247,168,6,1) 50%, rgba(255,8,0,1) 100%);*/
+    cursor: pointer;
+}
+
+.qcard{
+    margin-bottom: 10px;
+}
+
+.card-text span span{
+    color: crimson;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 0.5;
+}
+.card-text b{
+    position: absolute;
+    right: 7px;
+    top: 3px;    
+}
+
+.card-footer{
+    text-align: center;
+}
