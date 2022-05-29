@@ -681,7 +681,7 @@ createApp({
 
             for( item in this.systems ){
                 
-                if(this.systems[item].sex == 0 || this.systems[item].res == this.sex){
+                if(this.systems[item].sex == 0 || this.systems[item].sex == this.sex){
 
                     data.push({
                         x: this.systems[item].name,
