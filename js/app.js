@@ -702,7 +702,7 @@ createApp({
             show: true
             },
             chart: {
-            height: 600,
+            height: 500,
             type: 'treemap'
             },
             title: {

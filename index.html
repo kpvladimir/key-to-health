@@ -142,12 +142,17 @@
       <button class="btn btn-info btn-lg" @click="showInfo">Информация</button>
     </div>
 
-    <div class="system_list card" v-show="listShow">
-      <div class="card-header list-group-item-success">
+    <div class="system_list card border-0" v-show="listShow">
+      <div class="card-header list-group-item-success border-0">
         <b>Системы организма</b>
         <button @click="closeList" type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div class="card-body" style="flex: 0 0 auto">
+        <div class="alert alert-warning mb-0" role="alert">
+          Пройдите все тесты, чтобы увидеть свою <b>«Диаграмму здоровья»</b>!
+        </div>
       </div>
       <ul class="list-group list-group-flush">
         <template v-for="(item, index) in systems">
@@ -158,6 +163,9 @@
           </a>
         </template>
       </ul>
+      <div class="card-footer bg-light border-0">
+        <button href="#" @click="closeList" class="btn btn-primary">Закрыть</button>
+      </div>
     </div>
 
     <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -174,7 +182,6 @@
             <div class="alert alert-warning" role="alert">
               При наличии у Вас жалоб, отмеченных (<span class="text-danger"><b>*</b></span>), желательно сразу
               обратиться к врачу.
-
             </div>
             <div class="card qcard" v-for="(item, index) in currentTest.data">
               <div class="card-body">
@@ -198,7 +205,6 @@
                   <label class="form-check-label" :for="'option'+index+'_3'">ДА</label>
                 </div>
 
-
               </div>
             </div>
 
@@ -207,8 +213,8 @@
             <p class="lead">Ваш результат <b>{{currentTest.res}}</b> баллов:</p>
 
             <div :class="'alert alert-'+currentTest.resClass" role="alert">
-              <p v-show="currentTest.res<=5"><span class="text-success"><b>НОРМА (от 0 до 5 баллов)</b></span> - система
-                функционирует в пределах
+              <p v-show="currentTest.res<=5"><span class="text-success">
+                  <b>НОРМА (от 0 до 5 баллов)</b></span> - система функционирует в пределах
                 нормы. Для
                 поддержания ее в таком состоянии необходимо вести здоровый образ жизни и обеспечить сбалансированное
                 питание.</p>
@@ -244,6 +250,27 @@
             </div>
 
 
+            <div class="alert alert-info" role="alert">
+
+              <p v-show="currentTest.res<=5" class="mb-0">
+                Хотите сберечь своё здоровье на этом уровне? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                узнаете, как это
+                сделать с помощью нескольких простых шагов…
+              </p>
+
+              <p v-show="currentTest.res>5 && currentTest.res<11" class="mb-0">
+                Хотите улучшить своё здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                узнаете, как это
+                сделать с помощью нескольких простых шагов…
+              </p>
+
+              <p v-show="currentTest.res>10" class="mb-0">
+                Хотите вернуть себе здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                узнаете, как это
+                сделать с помощью нескольких простых шагов…
+              </p>
+
+            </div>
 
 
           </div>
@@ -266,7 +293,7 @@
                 </div-->
           <div class="modal-body">
 
-            <div id="chart" style="width: 100%;height: 600px;">
+            <div id="chart" style="width: 100%;">
 
             </div>
 
@@ -295,33 +322,19 @@
               вопросы тестов. Каждый вопрос оценен определенным количеством баллов.</p>
             <p><b>Варианты ответов на вопросы:</b></p>
             <ul>
-              <li>«ДА, ЧАСТО – 2 балла»</li>
-              <li>«ИНОГДА, ЧАСТИЧНО – 1 балл»</li>
-              <li>«НЕТ – 0 баллов»</li>
+              <li>ДА, ЧАСТО – 2 балла</li>
+              <li>ИНОГДА, ЧАСТИЧНО – 1 балл</li>
+              <li>НЕТ – 0 баллов</li>
             </ul>
 
-            <p>При наличии у Вас жалоб, отмеченных (<span class="text-danger"><b>*</b></span>), желательно сразу
-              обратиться к врачу.</p>
+            <div class="alert alert-warning" role="alert">
+              При наличии у Вас жалоб, отмеченных (<span class="text-danger"><b>*</b></span>), желательно сразу
+              обратиться к врачу.
+            </div>
 
-            <p><span class="text-success"><b>НОРМА (от 0 до 5 баллов)</b></span> - система функционирует в пределах
-              нормы. Для поддержания ее в таком состоянии необходимо вести здоровый образ жизни и обеспечить
-              сбалансированное питание.</p>
-
-            <p><span class="text-warning"><b>НАГРУЗКА (от 6 до 10 баллов)</b></span> - система превышает резервы
-              адаптации. Это состояние требует повышенного внимания к ней. В данной ситуации необходимо разработать
-              программу оптимального питания и физической нагрузки. При необходимости скорректировать питание при помощи
-              обогатителей. Также необходимо усилить экологическую защиту и разработать индивидуальные системы очистки
-              данной системы и всего организма в целом.</p>
-
-            <p><span class="text-danger"><b>ПЕРЕГРУЗКА (от 10 до 20 баллов)</b></span> - ВНИМАНИЕ! Система перегружена.
-              При наличии жалоб это могут быть либо начальные, либо сформированные патологические процессы. Желательно
-              изменить образ жизни в сторону оптимальной технологии сохранения Вашего здоровья. Необходима
-              индивидуальная диета, обязательна коррекция питания при помощи натуральных препаратов. Рекомендуется до
-              обследование с разработкой индивидуальной комплексной программы жизнеобеспечения. Любой патологический
-              процесс имеет причину. При ее выявлении и ликвидации можно реально рассчитывать на восстановление
-              здоровья. Чем более комплексный и системный подход к решению возникшей проблемы Вы обеспечите, тем больше
-              вероятность выздоровления. При создании оптимальных условий ослабленная система восстанавливает свой
-              энергетический и физический потенциал.</p>
+            <div class="alert alert-info" role="alert">
+              Пройдите все тесты, чтобы увидеть свою <b>«Диаграмму здоровья»</b>!
+            </div>
 
 
           </div>
