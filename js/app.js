@@ -631,7 +631,6 @@ createApp({
             preloader.style.display = 'none';   
         }, 1000);
         
-
     },
     methods: {
         showList(){
@@ -649,6 +648,9 @@ createApp({
         },
         showInfo(){
             $('#infoModal').modal('show');
+        },
+        showCon(){
+            $('#conModal').modal('show');
         },
         calcRes(){
             

@@ -12,14 +12,15 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 245px;
+    max-width: 220px;
     text-align: center; 
     margin: 0 auto;
     height: 100vh;
+    min-height: 568px;
 }
 
 .start_screen img{
-    max-width: 200px;
+    max-width: 120px;
 }
 
 .start_screen .btn{
@@ -27,11 +28,11 @@ body{
 }
 
 .start_screen .header{
-    font-size: 1.6rem;
-    line-height: 1.2;
+    font-size: 1.2rem;
+    line-height: 1.1;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 30px 0 40px;
+    margin: 10px 0 30px;
 }
 
 .system_list{

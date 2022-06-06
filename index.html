@@ -124,7 +124,7 @@
 
     <div class="start_screen" v-show="startShow">
       <img src="images/logo.png" alt="Ключик к Вашему здоровью">
-      <div class="header">Ключик<br>к Вашему<br>здоровью</div>
+      <div class="header">Ключик<br>к Вашему здоровью</div>
 
       <div class="mb-3">
         <div class="form-check form-check-inline">
@@ -137,9 +137,12 @@
         </div>
       </div>
 
-      <button class="btn btn-primary btn-lg mb-3" @click="showList">Пройти тестирование</button>
-      <button class="btn btn-success btn-lg mb-3" @click="showChart">Диаграмма здоровья</button>
-      <button class="btn btn-info btn-lg" @click="showInfo">Информация</button>
+      <button class="btn btn-primary btn1-lg mb-3" @click="showList">Пройти тестирование</button>
+      <button class="btn btn-success btn1-lg mb-3" @click="showChart">Диаграмма здоровья</button>
+      <button class="btn btn-warning btn1-lg mb-3" @click="showCon">Ключ к здоровью</button>
+      <button class="btn btn-info btn1-lg" @click="showInfo">Информация</button>
+
+
     </div>
 
     <div class="system_list card border-0" v-show="listShow">
@@ -170,7 +173,7 @@
 
     <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="testModalLabel">{{currentTest.name}}</h5>
@@ -283,7 +286,7 @@
 
     <div class="modal fade" id="chartModal" tabindex="-1" role="dialog" aria-labelledby="chartModalLabel"
       aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <!--div class="modal-header">
                     <h5 class="modal-title" id="testModalLabel">Диаграмма здоровья</h5>
@@ -308,10 +311,10 @@
 
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
       aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="штащModalLabel">Информация</h5>
+            <h5 class="modal-title" id="infoModalLabel">Информация</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -344,6 +347,126 @@
         </div>
       </div>
     </div>
+
+
+    <div class="modal fade" id="conModal" tabindex="-1" role="dialog" aria-labelledby="conModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conModalLabel">Ключ к здоровью</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <p>Здравствуйте! Тема, которая будет затронута в&nbsp;этом тексте&nbsp;&mdash; это тема здоровья.
+              На&nbsp;сегодняшний
+              день если Вы&nbsp;интересуетесь темой здоровья, то&nbsp;это вопрос здравого смысла и&nbsp;логики.</p>
+            <p>Информация, которая ниже, можно сказать, бесценна. Если вы&nbsp;усвоите её, то&nbsp;вы&nbsp;будете иметь
+              отличное
+              здоровье и&nbsp;сможете прожить намного дольше!</p>
+            <p>Например, чтобы автомобиль нам долго служил, мы&nbsp;смотрим за&nbsp;его техническим состоянием,
+              мы&nbsp;содержим его
+              в&nbsp;чистоте, регулярно меняем масло и&nbsp;заливаем правильное топливо. Хорошая хозяйка, когда
+              ухаживает
+              за&nbsp;своими цветами, тоже следит за&nbsp;состоянием своих растений, вовремя и&nbsp;правильно
+              их&nbsp;поливает,
+              подкармливает для того чтобы растение её радовало своим видом.<br />
+              Вот и&nbsp;нашему организму для того чтобы быть здоровым просто нужно создать надлежащие условия.</p>
+            <p>Вы&nbsp;узнаете о&nbsp;короткой инструкции&nbsp;&mdash; что нужно делать. Всего несколько шагов,
+              которые очень
+              просто запомнить.</p>
+            <p>Человеческий организм&nbsp;&mdash; это емкость с&nbsp;водой, так как мы&nbsp;на&nbsp;70% состоим
+              из&nbsp;воды,
+              и&nbsp;первое что нам нужно сделать, это напоить организм водой. Наши клетки, как рыбы, плавают
+              в&nbsp;воде
+              и&nbsp;внутри содержат тоже воду. И&nbsp;если мы&nbsp;создадим комфортные условия для наших клеток
+              в&nbsp;правильной
+              воде, они уже на&nbsp;70% процентов будут чувствовать себя лучше. Поэтому первое, что нам нужно
+              сделать&nbsp;&mdash;
+              это напоить организм правильной водой. Люди считают водой чаи, соки, компоты, молоко, но&nbsp;все это для
+              наших клеток
+              еда. И&nbsp;только вода является водой. Важно знать, что вода должна быть правильной, <nobr>т. е.</nobr>
+              обладать
+              нужными параметрами, и&nbsp;употреблять воду тоже нужно правильно. Это первый шаг.&nbsp;Сначала
+              мы&nbsp;напоим нашу
+              клетку.</p>
+            <p>На&nbsp;втором шаге мы&nbsp;очищаем каждую клетку и&nbsp;организм в&nbsp;целом. В&nbsp;организме
+              накапливаются
+              продукты жизнедеятельности, <nobr>т. к.</nobr> выводящие системы не&nbsp;всегда справляются. Например,
+              в&nbsp;толстом
+              кишечнике могут скопиться килограммы отложений. С&nbsp;современной пищей и&nbsp;воздухом в&nbsp;организм
+              регулярно
+              попадают вредные вещества. Нам вредят паразиты, которые есть у&nbsp;каждого,
+              но&nbsp;мы&nbsp;их&nbsp;не&nbsp;всегда
+              замечаем. И&nbsp;от&nbsp;этого нам нужно избавиться.</p>
+            <p>Третий шаг&nbsp;&mdash; накормить клетку. Почему это последнее действие? Полное и&nbsp;правильное
+              усвоение возможно
+              только тогда когда есть для этого условия. Первый шаг нам дал возможность организму лучше растворять
+              и&nbsp;доставлять
+              полезные вещества. Вторым шагом мы&nbsp;обеспечили условия для лучшего их&nbsp;усвоения и&nbsp;уменьшение
+              потерь.
+              После первых двух шагов работа организма улучшается, а&nbsp;после получения питания мы&nbsp;ещё лучше
+              начинаем себя
+              чувствовать.</p>
+
+            <p class="lead"><b>Запоминаем:</b> напоить, почистить, накормить.</p>
+
+            <p>Вот пример: когда мы&nbsp;приходим домой после грязной и&nbsp;тяжелой работы, неужели нам сразу хочется
+              кушать?
+              Сначала нам хочется напиться воды, принять душ, а&nbsp;потом уже кушать. Также аналогично
+              и&nbsp;с&nbsp;нашим
+              организмом. Поэтому сначала мы&nbsp;клеточку поим, затем чистим от&nbsp;токсинов и&nbsp;от&nbsp;паразитов.
+              И&nbsp;только после этого кормим.</p>
+            <p>Кроме основных шагов ещё необходимо защищать наши клетки. Возможно, вы&nbsp;слышали такой термин как
+              &laquo;свободные
+              радикалы&raquo;? Это когда в&nbsp;нашем организме происходят окислительные процессы, которые нам вредят
+              и&nbsp;разрушают организм. Поэтому очень важно променять антиоксидантную защиту.</p>
+            <p class="lead"><b>Итак:</b> напоить, очистить, накормить и&nbsp;защитить.</p>
+            <p>Проходит время, наш организм восстанавливается,
+              молодеет, клетки
+              становятся здоровыми, а&nbsp;здоровые клетки рождают новые здоровые клетки. В&nbsp;результате организм
+              настолько
+              обновляется, что это видят окружающие и&nbsp;спрашивают &laquo;А&nbsp;что ты&nbsp;делаешь, чтобы так
+              хорошо
+              выглядеть?&raquo;.</p>
+            <p>Наука в&nbsp;сфере здоровья очень далеко продвинулась. Мы&nbsp;имеем сотни продуктов, которые улучшают
+              качество воды,
+              улучшают питание, дают нам очищение и&nbsp;защищают нас от&nbsp;быстрого старения. Мы&nbsp;имеем все,
+              чтобы
+              удовлетворить физиологическую потребность организма. Современными продуктами для здоровья можно создать
+              любую
+              программу под вашу конкретную проблему с&nbsp;учётом вашего возраста, пола и&nbsp;<nobr>каких-то</nobr>
+              особенностей
+              организма.</p>
+            <p>Кроме того, созданы готовые комплексные решения&nbsp;&mdash; наборы в&nbsp;которых компоненты подобраны
+              так что они
+              усиливают эффект от&nbsp;их&nbsp;применения. Эти наборы рассчитаны как для пошагового их&nbsp;применения,
+              так
+              и&nbsp;для оздоровления отдельных органов или систем человека.</p>
+
+            <div class="alert alert-warning" role="alert">
+              <p><b>Помните, что Ваше тело это единственный транспорт в&nbsp;будущее!</b></p>
+              <p>Если Вы&nbsp;нашли для себя эту информацию ценной и&nbsp;хотите узнать больше, обращайтесь к&nbsp;тому,
+                кто Вам дал
+                ссылку.</p>
+            </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
   </div>
 
