@@ -652,6 +652,9 @@ createApp({
         showCon(){
             $('#conModal').modal('show');
         },
+        showVideo(){
+            $('#modal-fullscreen').modal('show');
+        },
         calcRes(){
             
             var summ = 0;
