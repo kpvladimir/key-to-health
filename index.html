@@ -10,7 +10,7 @@
   <meta name="description" content="Тест для проведения оценки индивидуального уровня здоровья систем организма">
   <meta property="og:title" content="Ключ к Вашему здоровью">
   <meta property="og:description" content="Тест для проведения оценки индивидуального уровня здоровья систем организма">
-  <meta property="og:image" content="fb.jpg">
+  <meta property="og:image" content="https://kpvladimir.github.io/key-to-health/fb.jpg">
   <meta property="og:image:width" content="524">
   <meta property="og:image:height" content="273">
   <meta property="og:url" content="https://kpvladimir.github.io/key-to-health/">
@@ -496,11 +496,11 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <iframe id="keyVideo" src="https://www.youtube.com/embed/-P_bjq62Bfo" title="КЛЮЧИК К ВАШЕМУ ЗДОРОВЬЮ"
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe>
+            <iframe id="keyVideo" :src="url" title="КЛЮЧИК К ВАШЕМУ ЗДОРОВЬЮ" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-sm btn-light" @click="closeVideo()">Закрыть</button>
           </div>
         </div>
       </div>

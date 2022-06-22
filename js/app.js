@@ -9,6 +9,7 @@ createApp({
             currentTest: {},
             currentIndex: null,
             sex: 1,
+            url: '',
             systems: [
                 {
                     name: 'Центральная нервная система',
@@ -654,6 +655,11 @@ createApp({
         },
         showVideo(){
             $('#modal-fullscreen').modal('show');
+            this.url = 'https://www.youtube.com/embed/-P_bjq62Bfo';
+        },
+        closeVideo(){
+            $('#modal-fullscreen').modal('hide');
+            this.url = '';
         },
         calcRes(){
             
