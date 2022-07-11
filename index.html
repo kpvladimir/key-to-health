@@ -127,13 +127,13 @@
       <div class="header">Ключик<br>к Вашему здоровью</div>
 
       <div class="mb-3">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="sex_1" value="1" v-model="sex">
-          <label class="form-check-label" for="sex_1">МУЖ</label>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input class="custom-control-input" type="radio" id="sex_1" value="1" v-model="sex">
+          <label class="custom-control-label" for="sex_1">МУЖ</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="sex_2" value="2" v-model="sex">
-          <label class="form-check-label" for="sex_2">ЖЕН</label>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input class="custom-control-input" type="radio" id="sex_2" value="2" v-model="sex">
+          <label class="custom-control-label" for="sex_2">ЖЕН</label>
         </div>
       </div>
 
@@ -192,7 +192,7 @@
           <a @click="showTest(index)" v-if="item.sex == 0 || item.sex==sex"
             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             {{item.name}}&nbsp;&nbsp;
-            <span :class="'badge badge-'+item.resClass" ve-show1="item.res>0">{{item.res}} </span>
+            <span :class="'badge badge-'+item.resClass" v-show="item.showResult">{{item.res}} </span>
           </a>
         </template>
       </ul>
@@ -216,95 +216,102 @@
               При наличии у Вас жалоб, отмеченных (<span class="text-danger"><b>*</b></span>), желательно сразу
               обратиться к врачу.
             </div>
+
             <div class="card qcard" v-for="(item, index) in currentTest.data">
               <div class="card-body">
                 <p class="card-text"><b>{{index+1}}</b> <span v-html="item.text"></span></p>
               </div>
               <div class="card-footer">
 
-                <div class="form-check form-check-inline">
-                  <input @change="calcRes(index)" class="form-check-input" type="radio" :id="'option'+index+'_1'"
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input @change="calcRes(index)" class="custom-control-input" type="radio" :id="'option'+index+'_1'"
                     value="0" v-model="item.ans">
-                  <label class="form-check-label" :for="'option'+index+'_1'">НЕТ</label>
+                  <label class="custom-control-label" :for="'option'+index+'_1'">НЕТ</label>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input @change="calcRes" class="form-check-input" type="radio" :id="'option'+index+'_2'" value="1"
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input @change="calcRes" class="custom-control-input" type="radio" :id="'option'+index+'_2'" value="1"
                     v-model="item.ans">
-                  <label class="form-check-label" :for="'option'+index+'_2'">ИНОГДА</label>
+                  <label class="custom-control-label" :for="'option'+index+'_2'">ИНОГДА</label>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input @change="calcRes" class="form-check-input" type="radio" :id="'option'+index+'_3'" value="2"
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input @change="calcRes" class="custom-control-input" type="radio" :id="'option'+index+'_3'" value="2"
                     v-model="item.ans">
-                  <label class="form-check-label" :for="'option'+index+'_3'">ДА</label>
+                  <label class="custom-control-label" :for="'option'+index+'_3'">ДА</label>
                 </div>
 
               </div>
             </div>
 
             <hr>
-
-            <p class="lead">Ваш результат <b>{{currentTest.res}}</b> баллов:</p>
-
-            <div :class="'alert alert-'+currentTest.resClass" role="alert">
-              <p v-show="currentTest.res<=5"><span class="text-success">
-                  <b>НОРМА (от 0 до 5 баллов)</b></span> - система функционирует в пределах
-                нормы. Для
-                поддержания ее в таком состоянии необходимо вести здоровый образ жизни и обеспечить сбалансированное
-                питание.</p>
-
-              <p v-show="currentTest.res>5 && currentTest.res<11"><span class="text-warning"><b>НАГРУЗКА (от 6 до 10
-                    баллов)</b></span> -
-                система превышает резервы
-                адаптации. Это
-                состояние требует повышенного внимания к ней. В данной ситуации необходимо разработать программу
-                оптимального питания
-                и физической нагрузки. При необходимости скорректировать питание при помощи обогатителей. Также
-                необходимо
-                усилить
-                экологическую защиту и разработать индивидуальные системы очистки данной системы и всего организма в
-                целом.</p>
-
-              <p v-show="currentTest.res>10"><span class="text-danger"><b>ПЕРЕГРУЗКА (от 10 до 20
-                    баллов)</b></span> - ВНИМАНИЕ! Система перегружена.
-                При наличии
-                жалоб это могут быть либо начальные, либо сформированные патологические процессы. Желательно изменить
-                образ жизни в
-                сторону оптимальной технологии сохранения Вашего здоровья. Необходима индивидуальная диета, обязательна
-                коррекция
-                питания при помощи натуральных препаратов. Рекомендуется до обследование с разработкой индивидуальной
-                комплексной
-                программы жизнеобеспечения. Любой патологический процесс имеет причину. При ее выявлении и ликвидации
-                можно реально
-                рассчитывать на восстановление здоровья. Чем более комплексный и системный подход к решению возникшей
-                проблемы Вы
-                обеспечите, тем больше вероятность выздоровления. При создании оптимальных условий ослабленная система
-                восстанавливает
-                свой энергетический и физический потенциал.</p>
+            <div class="text-center" v-on:click="currentTest.showResult=true" v-show="!currentTest.showResult">
+              <button type="button" class="btn btn-primary">Показать результат</button>
             </div>
+            <div v-show="currentTest.showResult">
+
+              <p class="lead">Ваш результат <b>{{currentTest.res}}</b> баллов:</p>
+
+              <div :class="'alert alert-'+currentTest.resClass" role="alert">
+                <p v-show="currentTest.res<=5"><span class="text-success">
+                    <b>НОРМА (от 0 до 5 баллов)</b></span> - система функционирует в пределах
+                  нормы. Для
+                  поддержания ее в таком состоянии необходимо вести здоровый образ жизни и обеспечить сбалансированное
+                  питание.</p>
+
+                <p v-show="currentTest.res>5 && currentTest.res<11"><span class="text-warning"><b>НАГРУЗКА (от 6 до 10
+                      баллов)</b></span> -
+                  система превышает резервы
+                  адаптации. Это
+                  состояние требует повышенного внимания к ней. В данной ситуации необходимо разработать программу
+                  оптимального питания
+                  и физической нагрузки. При необходимости скорректировать питание при помощи обогатителей. Также
+                  необходимо
+                  усилить
+                  экологическую защиту и разработать индивидуальные системы очистки данной системы и всего организма в
+                  целом.</p>
+
+                <p v-show="currentTest.res>10"><span class="text-danger"><b>ПЕРЕГРУЗКА (от 10 до 20
+                      баллов)</b></span> - ВНИМАНИЕ! Система перегружена.
+                  При наличии
+                  жалоб это могут быть либо начальные, либо сформированные патологические процессы. Желательно изменить
+                  образ жизни в
+                  сторону оптимальной технологии сохранения Вашего здоровья. Необходима индивидуальная диета,
+                  обязательна
+                  коррекция
+                  питания при помощи натуральных препаратов. Рекомендуется до обследование с разработкой индивидуальной
+                  комплексной
+                  программы жизнеобеспечения. Любой патологический процесс имеет причину. При ее выявлении и ликвидации
+                  можно реально
+                  рассчитывать на восстановление здоровья. Чем более комплексный и системный подход к решению возникшей
+                  проблемы Вы
+                  обеспечите, тем больше вероятность выздоровления. При создании оптимальных условий ослабленная система
+                  восстанавливает
+                  свой энергетический и физический потенциал.</p>
+              </div>
 
 
-            <div class="alert alert-info" role="alert">
+              <div class="alert alert-info" role="alert">
 
-              <p v-show="currentTest.res<=5" class="mb-0">
-                Хотите сберечь своё здоровье на этом уровне? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
-                узнаете, как это
-                сделать с помощью нескольких простых шагов…
-              </p>
+                <p v-show="currentTest.res<=5" class="mb-0">
+                  Хотите сберечь своё здоровье на этом уровне? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                  узнаете, как это
+                  сделать с помощью нескольких простых шагов…
+                </p>
 
-              <p v-show="currentTest.res>5 && currentTest.res<11" class="mb-0">
-                Хотите улучшить своё здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
-                узнаете, как это
-                сделать с помощью нескольких простых шагов…
-              </p>
+                <p v-show="currentTest.res>5 && currentTest.res<11" class="mb-0">
+                  Хотите улучшить своё здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                  узнаете, как это
+                  сделать с помощью нескольких простых шагов…
+                </p>
 
-              <p v-show="currentTest.res>10" class="mb-0">
-                Хотите вернуть себе здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
-                узнаете, как это
-                сделать с помощью нескольких простых шагов…
-              </p>
+                <p v-show="currentTest.res>10" class="mb-0">
+                  Хотите вернуть себе здоровье? Обратитесь к тому, кто дал Вам ссылку на этот тест, и
+                  узнаете, как это
+                  сделать с помощью нескольких простых шагов…
+                </p>
+
+              </div>
 
             </div>
-
 
           </div>
           <div class="modal-footer">

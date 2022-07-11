@@ -13,6 +13,7 @@ createApp({
             systems: [
                 {
                     name: 'Центральная нервная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -60,6 +61,7 @@ createApp({
                 },
                 {
                     name: 'Дыхательная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -107,6 +109,7 @@ createApp({
                 },
                 {   
                     name: 'Сердечно-сосудистая система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -154,6 +157,7 @@ createApp({
                 },
                 {
                     name: 'Кроветворная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -201,6 +205,7 @@ createApp({
                 },
                 {
                     name: 'Пищеварительная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -248,6 +253,7 @@ createApp({
                 },
                 {
                     name: 'Мочевыделительная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -295,6 +301,7 @@ createApp({
                 },
                 {
                     name: 'Репродуктивная система',
+                    showResult: false,
                     sex: 2,
                     data: [
                         {
@@ -342,6 +349,7 @@ createApp({
                 },
                                 {
                     name: 'Репродуктивная система',
+                    showResult: false,
                     sex: 1,
                     data: [
                         {
@@ -389,6 +397,7 @@ createApp({
                 },
                 {
                     name: 'Эндокринная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -436,6 +445,7 @@ createApp({
                 },
                 {
                     name: 'Костно-мышечная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -483,6 +493,7 @@ createApp({
                 },
                 {
                     name: 'Лимфатическая система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -530,6 +541,7 @@ createApp({
                 },
                 {
                     name: 'Иммунная система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
@@ -577,6 +589,7 @@ createApp({
                 },
                 {
                     name: 'Периферическая система',
+                    showResult: false,
                     sex: 0,
                     data: [
                         {
